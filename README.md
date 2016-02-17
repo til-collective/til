@@ -12,10 +12,19 @@ _1 TIL and counting..._
 
 ## Categories
 
+* [Ruby](#ruby)
 * [Vim](#vim)
 
 ---
 
+
+## Ruby
+
+- [OpenSSL SSLv3_client troubleshooting on Ubuntu 14.04](ruby/openssl-troubleshooting-on-ubuntu.md)
+
+
 ## Vim
 
 - [Count The Number Of Matches](vim/count-the-number-of-matches.md)
+
+
