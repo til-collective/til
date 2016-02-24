@@ -15,6 +15,7 @@ Add your TIL:
   language or technology
 - Add an entry to `README.md` in the appropriate section in alphabetical
   order.
+- Add an entry to `SUMMARY.md` to Gitbook updates it the book summary.
 - Increment the TIL count at the top of `README.md`
 
 Submit your change:
