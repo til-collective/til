@@ -12,6 +12,7 @@ _1 TIL and counting..._
 
 ## Categories
 
+* [Ubuntu](#ubuntu)
 * [Vim](#vim)
 
 ---
@@ -19,3 +20,6 @@ _1 TIL and counting..._
 ## Vim
 
 - [Count The Number Of Matches](vim/count-the-number-of-matches.md)
+
+## Ubuntu
+- [Block IP Address On Ubuntu Derver](ubuntu/block-ip-address-from-accessing-server.md)
