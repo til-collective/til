@@ -8,7 +8,9 @@ warrant a full blog post.
 
 Did you learn something today? Please [contribute](CONTRIBUTING.md)!
 
-_1 TIL and counting..._
+_2 TIL and counting..._
+
+---
 
 ## Categories
 
@@ -20,8 +22,6 @@ _1 TIL and counting..._
 ## Vim
 
 - [Count The Number Of Matches](vim/count-the-number-of-matches.md)
-
----
 
 ## Git
 
