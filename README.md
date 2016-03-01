@@ -8,7 +8,7 @@ warrant a full blog post.
 
 Did you learn something today? Please [contribute](CONTRIBUTING.md)!
 
-_2 TIL and counting..._
+_2 TIL and counting..._ 
 
 ---
 
