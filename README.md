@@ -12,17 +12,17 @@ _2 TIL and counting..._
 
 ---
 
-## Categories
+### Categories
 
 * [Vim](#vim)
 * [Git](#git)
 
 ---
 
-## Vim
+### Vim
 
 - [Count The Number Of Matches](vim/count-the-number-of-matches.md)
 
-## Git
+### Git
 
 - [Undo `git-add` Before Commit](git/undo-git-add-before-commit.md)
