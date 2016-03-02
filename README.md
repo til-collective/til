@@ -8,7 +8,7 @@ warrant a full blog post.
 
 Did you learn something today? Please [contribute](CONTRIBUTING.md)!
 
-_2 TIL and counting..._ 
+_3 TIL and counting..._ 
 
 ---
 
@@ -16,6 +16,7 @@ _2 TIL and counting..._
 
 * [Vim](#vim)
 * [Git](#git)
+* [Javascript](#javascript)
 
 ---
 
@@ -26,3 +27,6 @@ _2 TIL and counting..._
 ### Git
 
 - [Undo `git-add` Before Commit](git/undo-git-add-before-commit.md)
+
+### Javascript
+- [Regexp for Nonalphanumeric Character](javascript/regexp-for-nonalphanumeric-character.md)
