@@ -22,4 +22,4 @@ _2 TIL's and counting..._
 - [Count The Number Of Matches](vim/count-the-number-of-matches.md)
 
 ## Ubuntu
-- [Block IP Address On Ubuntu Derver](ubuntu/block-ip-address-from-accessing-server.md)
+- [Block IP Address On Ubuntu Server](ubuntu/block-ip-address-from-accessing-server.md)
