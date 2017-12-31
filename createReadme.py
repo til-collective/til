@@ -140,3 +140,4 @@ def create_readme():
 
 if __name__ == '__main__':
     create_readme()
+    os.system('git add README.md')
