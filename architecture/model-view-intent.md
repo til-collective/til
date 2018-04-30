@@ -8,7 +8,7 @@ To answer this question why MVI, We need to know what is mvi
 
 #### What is MVI?
 
-MVI - Model View Intent means State View Intention, where Model -> State and Intent -> Intent  ( Note: This is not android intent, it is user intention )
+MVI - Model View Intent means State View Intention, where Model -> State and Intent -> Intention  ( Note: This is not android intent, it is user intention )
 
 #### State
 Supose we have screen which is loading right now like this:
