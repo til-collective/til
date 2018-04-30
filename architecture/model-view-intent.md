@@ -34,7 +34,7 @@ State {
 ```
 
 #### MVP to MVI = MVPI
-The presenter is kept same, when moving from MVP to MVI. The only difference is in mvp the state of current program is partly known to view and partly known to presenter. This makes program little bit difficult to test and debugg. But in MVI the state is kept in saperate class. We will get in depth as I learn more, but for now this is what I have learn today about MVI.
+The presenter is kept same, when moving from MVP to MVI. The only difference is in mvp the state of current program is partly known to view and partly known to presenter. This makes program little bit difficult to test and debug. But in MVI the state is kept in saperate class. We will get in depth as I learn more, but for now this is what I have learn today about MVI.
 
 ### References
 * https://www.youtube.com/watch?v=KpuFW-jamVo
