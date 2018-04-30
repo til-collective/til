@@ -12,10 +12,10 @@ _1 TIL and counting..._
 
 ## Categories
 
-* [Vim](#vim)
+* [Architecture](#architecture)
 
 ---
 
-## Vim
+## Architecture
 
-- [Count The Number Of Matches](vim/count-the-number-of-matches.md)
+- [Model View Intent](architecture/model-view-intent.md)
