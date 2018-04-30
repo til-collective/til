@@ -26,10 +26,10 @@ State {
 And when the state changes like the list items are shown the state will be defined as following:
 ```
 State {
-   loading = true
+   loading = false
    refreshing = false
    emptyItems = false
-   itemsShowing = false
+   itemsShowing = true
 }
 ```
 
