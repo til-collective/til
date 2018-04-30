@@ -8,5 +8,5 @@
 #### Steps:
    * Create an account at onesignal.com
    * Create your app at onesignal.com with name MyApp.
-   * Generate Certificates for Push Notifications (both debug and release)at developer.apple.com and provide them at onesignal.com. For more help for Push Notifications see https://www.pubnub.com/docs/ios-objective-c/mobile-gateway-sdk-v4#APNS_Prerequisites.
+   * Generate Certificates for Push Notifications (both debug and release)at developer.apple.com and provide them at onesignal.com. For more help for Push Notifications read step 2 : APNS Prerequisites Certs at https://www.pubnub.com/docs/ios-objective-c/mobile-gateway-sdk-v4#APNS_Prerequisites.
    * 
