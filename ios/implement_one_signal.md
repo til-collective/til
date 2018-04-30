@@ -1,4 +1,9 @@
 # Implement Push Notifications Using One Signal
+
+### Requirements
+* Physical Device to test one signal
+* Paid Apple developer account
+
 ### Setup One Signal
 #### Steps:
    * Create an account at onesignal.com
