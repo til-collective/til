@@ -52,7 +52,19 @@ self.initOneSignal(withLaunchingOptions: launchOptions)
 ### Bonus : Getting OneSignalIds and saving to parse
 Often times we want to store one signal id to server in our case parse. That OneSignalId will be used for sending push notification from parse server or device to device for chat message notifications. Kindly note that a user can logout from the app any time he wants, so this user should not be able to get push notification again. To acomplish this we need to clear the onesignal id when ever the user logouts from our app.
 ```swift
-@objc public class OneSignalUtils : NSObject {
+//
+//  OneSignalUtils.swift
+//
+//
+//  Created by Sheeraz Ahmed Memon on 30/04/2018.
+//  Copyright © 2018 Ahsan Misbah. All rights reserved.
+//
+
+import Foundation
+import OneSignal
+import ParseUI
+import RxSwift
+public class OneSignalUtils : NSObject {
     
     static let TAG = "OneSignalUtils"
     
@@ -60,7 +72,7 @@ Often times we want to store one signal id to server in our case parse. That One
         
     }
     
-    @objc public func updateOneSignalIdForCurrentUser(completionHandler: @escaping (Bool) -> ()){
+    public func updateOneSignalIdForCurrentUser(completionHandler: @escaping (Bool) -> ()){
         
         //getPermissionSubscriptionState
         let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
@@ -131,6 +143,7 @@ Often times we want to store one signal id to server in our case parse. That One
         }
     }
 }
+
 ```
 
 
