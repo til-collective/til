@@ -49,6 +49,90 @@ self.initOneSignal(withLaunchingOptions: launchOptions)
 ### Testing One Signal
 * See the following link: https://documentation.onesignal.com/docs/testing-mobile-push-notifications
 
+### Bonus : Getting OneSignalIds and saving to parse
+Often times we want to store one signal id to server in our case parse. That OneSignalId will be used for sending push notification from parse server or device to device for chat message notifications. Kindly note that a user can logout from the app any time he wants, so this user should not be able to get push notification again. To acomplish this we need to clear the onesignal id when ever the user logouts from our app.
+```swift
+@objc public class OneSignalUtils : NSObject {
+    
+    static let TAG = "OneSignalUtils"
+    
+    override init() {
+        
+    }
+    
+    @objc public func updateOneSignalIdForCurrentUser(completionHandler: @escaping (Bool) -> ()){
+        
+        //getPermissionSubscriptionState
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let hasPrompted = status.permissionStatus.hasPrompted
+        print("hasPrompted = \(hasPrompted)")
+        let userStatus = status.permissionStatus.status
+        print("userStatus = \(userStatus)")
+        let isSubscribed = status.subscriptionStatus.subscribed
+        print("isSubscribed = \(isSubscribed)")
+        let userSubscriptionSetting = status.subscriptionStatus.userSubscriptionSetting
+        print("userSubscriptionSetting = \(userSubscriptionSetting)")
+        let userID = status.subscriptionStatus.userId
+        print("userID = \(userID ?? "None")")
+        let pushToken = status.subscriptionStatus.pushToken
+        print("pushToken = \(pushToken ?? "None")")
+        
+        if userID != nil  {
+            if(PFUser.current() != nil){
+                let user = PFUser.current() as! RTUser
+                user.oneSignalId = userID
+                user.saveInBackground(block: { (result, error) in
+                    
+                    _ = self.deleteDuplicateOneSignalIdsCurrUserObservable(userId: user.objectId!, oneSignalId: user.oneSignalId)
+                        .observeOn(MainScheduler())
+                        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                        .subscribe(onNext: { (result) in
+                            print("\(OneSignalUtils.TAG) : onNext()")
+                            
+                            completionHandler(true)
+                            
+                            }, onError: { (err) in
+                                print("\(OneSignalUtils.TAG) : error: \(err)")
+                                
+                            }, onCompleted: {
+                                print("\(OneSignalUtils.TAG) : onCompleted()")
+                                
+                        } )
+                    
+                    
+                })
+            }
+        }
+    }
+    
+    
+    private func deleteDuplicateOneSignalIdsCurrUserObservable(userId : String, oneSignalId : String) -> Observable<Bool> {
+        
+        return Observable.create { observer in
+            
+            print("\(OneSignalUtils.TAG) : deleteDuplicateOneSignalIdsCurrUserObservable()")
+            
+            var parms : [String : Any] = [:]
+            parms["userId"] = userId
+            parms["oneSignalId"] = oneSignalId
+        
+            do {
+                
+                _ = try PFCloud.callFunction("checkDuplicateOneSignalId", withParameters: parms)
+                
+                observer.onNext(true)
+                observer.onCompleted()
+                
+            } catch {
+                observer.onError(error)
+            }
+            
+            return Disposables.create()
+        }
+    }
+}
+```
+
 
 ### Resources:
 * https://www.youtube.com/watch?v=tjuv3g_ZDEU
