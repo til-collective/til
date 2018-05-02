@@ -77,17 +77,11 @@ public class OneSignalUtils : NSObject {
         //getPermissionSubscriptionState
         let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
         let hasPrompted = status.permissionStatus.hasPrompted
-        print("hasPrompted = \(hasPrompted)")
         let userStatus = status.permissionStatus.status
-        print("userStatus = \(userStatus)")
         let isSubscribed = status.subscriptionStatus.subscribed
-        print("isSubscribed = \(isSubscribed)")
         let userSubscriptionSetting = status.subscriptionStatus.userSubscriptionSetting
-        print("userSubscriptionSetting = \(userSubscriptionSetting)")
         let userID = status.subscriptionStatus.userId
-        print("userID = \(userID ?? "None")")
         let pushToken = status.subscriptionStatus.pushToken
-        print("pushToken = \(pushToken ?? "None")")
         
         if userID != nil  {
             if(PFUser.current() != nil){
