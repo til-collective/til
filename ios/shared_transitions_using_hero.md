@@ -8,7 +8,7 @@ Traditionally transitions between different two view controllers involved enter 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*YPDis2g8BiKKzkeR2dUgcQ.gif "Examples of Enter/Exit Transitions")
 However, many times, there are elements common to both view controllers and providing the ability to transition these shared elements separately emphasizes continuity between transitions and breaks activity boundaries as the user navigates the app.
 The nature of this transition forces the human eye to focus on the content and its representation in the new view controller instead of the actual view controller frame sliding or fading which makes the experience a lot more seamless. These transitions are called shared transitions
-![alt text](https://2.bp.blogspot.com/-SYxpgdCZYdQ/WoYW8x3m0II/AAAAAAAAFEs/m4ZE9gpGwsE1n1SopuBkvbg9_IGzGqgpgCLcBGAs/s1600/intro.gif "Example of Shared Transition")
+![alt text](images/sharedtransition.gif "Example of Shared Transition")
 
 The above example is for android, but same can be implemented in iOS too.
 ### Implementing Shared Transitions Using Hero
@@ -106,7 +106,6 @@ class ArticleDemoDetailViewController: UIViewController {
 
 }
 ```
-
 
 ### Resources
 * https://medium.com/the-code-community/hello-x-cool-swift-3-transition-framework-ddada37db819
