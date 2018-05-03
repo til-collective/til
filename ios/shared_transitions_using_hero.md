@@ -84,7 +84,7 @@ extension ArticlesListViewController {
 }
 
 ```
-##### ArticleListViewController:
+##### ArticleDemoDetailViewController:
 -----------
 ```swift
 class ArticleDemoDetailViewController: UIViewController {
