@@ -19,33 +19,18 @@ pod "Hero"
 ```
 To make shared transitions between two view controllers, the following are the steps:
 * Enable hero in both view controllers in first view controller when transitioning and in second in viewDidLoad()
-* Assign same hero.id for shared elements in both view controllers
-##### ArticleListViewController:
------------
 ```swift
-override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = UIStoryboard(name: "HeroApproach", bundle: nil).instantiateViewController(withIdentifier: "ArticleDemoDetailViewController") as! ArticleDemoDetailViewController
-        controller.imageName = items[indexPath.row].0
-        controller.hero.isEnabled = true
-        self.hero.replaceViewController(with: controller)
-    }
+controller.hero.isEnabled = true
 ```
-##### ArticleDemoDetailViewController:
------------
+* Assign same heroId for shared elements in both view controllers
 ```swift
-override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.hero.isEnabled = true
-        ivDetail.hero.id = "image"
-        
-        if(imageName != nil){
-            ivDetail.image = UIImage(named: imageName!)
-        }
-    }
+ivDetail.hero.id = "image"
 ```
-
-### Full Source Code
+* Call replaceViewController from Hero Library instead of pushViewController or presentViewController
+```swift
+self.hero.replaceViewController(with: controller)
+```
+### Full Example Source Code
 ##### ArticleListViewController:
 -----------
 ```swift
