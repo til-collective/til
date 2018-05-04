@@ -26,9 +26,9 @@ controller.hero.isEnabled = true
 ```swift
 ivDetail.hero.id = "image"
 ```
-* Call replaceViewController from Hero Library instead of pushViewController or presentViewController
+* Call pushViewController or presentViewController
 ```swift
-self.hero.replaceViewController(with: controller)
+self.present(controller, animated: true)
 ```
 ### Full Example Source Code
 ##### ArticleListViewController:
@@ -79,7 +79,7 @@ extension ArticlesListViewController {
         let controller = UIStoryboard(name: "HeroApproach", bundle: nil).instantiateViewController(withIdentifier: "ArticleDemoDetailViewController") as! ArticleDemoDetailViewController
         controller.imageName = items[indexPath.row]
         controller.hero.isEnabled = true
-        self.hero.replaceViewController(with: controller)
+        self.present(controller, animated: true)
     }
 }
 
@@ -114,12 +114,14 @@ The above code is fine, but it will not work with navigation controllers. To imp
 ```swift
 controller.navigationController?.hero.isEnabled = true
 ```
-* Call replace view controller function of Hero for navigationcontroller instead of controller itself
+* Call pushViewController
 ```swift
-self.navigationController?.hero.replaceViewController(with: controller)
+self.navigationController?.pushViewController(controller, animated: true)
 ```
-
+### Points to note:
+* There is replaceViewController function hero. This is not to be used unless u want to replace a controller with the other. When Using Hero all u have to do is enabling hero, assign shared element ids and call push or present. This is all we have to do.
 
 ### Resources
+* https://github.com/lkzhao/Hero
 * https://medium.com/the-code-community/hello-x-cool-swift-3-transition-framework-ddada37db819
 * https://guides.codepath.com/android/shared-element-activity-transition
