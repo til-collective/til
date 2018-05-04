@@ -107,6 +107,19 @@ class ArticleDemoDetailViewController: UIViewController {
 }
 ```
 
+### Shared Transitions in Navigation Controller
+The above code is fine, but it will not work with navigation controllers. To implement this in navigation controller you must do a little trick
+##### Steps:
+* Set hero enabled for navigation controller now
+```swift
+controller.navigationController?.hero.isEnabled = true
+```
+* Call replace view controller function of Hero for navigationcontroller instead of controller itself
+```swift
+self.navigationController?.hero.replaceViewController(with: controller)
+```
+
+
 ### Resources
 * https://medium.com/the-code-community/hello-x-cool-swift-3-transition-framework-ddada37db819
 * https://guides.codepath.com/android/shared-element-activity-transition
