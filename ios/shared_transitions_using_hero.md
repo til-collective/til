@@ -4,13 +4,12 @@
 * Physical Device will helpful but not necessary
 
 ### What is shared transition?
-Traditionally transitions between different two view controllers involved enter and exit transitions that animated entire view hierarchies independent to each other. Example of such transitions are a fade transition, slide transition or the newly introduced explode transition.
+Traditionally transitions between two different view controllers involved enter and exit transitions that animate entire view hierarchies independent to each other. Example of such transitions are a fade transition, slide transition or the newly introduced explode transition.
 ![alt text](https://cdn-images-1.medium.com/max/800/1*YPDis2g8BiKKzkeR2dUgcQ.gif "Examples of Enter/Exit Transitions")
 However, many times, there are elements common to both view controllers and providing the ability to transition these shared elements separately emphasizes continuity between transitions and breaks activity boundaries as the user navigates the app.
 The nature of this transition forces the human eye to focus on the content and its representation in the new view controller instead of the actual view controller frame sliding or fading which makes the experience a lot more seamless. These transitions are called shared transitions
 ![alt text](images/sharedtransition.gif "Example of Shared Transition")
 
-The above example is for android, but same can be implemented in iOS too.
 ### Implementing Shared Transitions Using Hero
 ##### Steps: 
 * Install the hero pod, https://github.com/lkzhao/Hero
@@ -110,7 +109,7 @@ class ArticleDemoDetailViewController: UIViewController {
 ### Shared Transitions in Navigation Controller
 The above code is fine, but it will not work with navigation controllers. To implement this in navigation controller you must do a little trick
 ##### Steps:
-* Set hero enabled for navigation controller now
+* Set hero enabled for navigation controller instead of normal view controller
 ```swift
 controller.navigationController?.hero.isEnabled = true
 ```
@@ -119,7 +118,7 @@ controller.navigationController?.hero.isEnabled = true
 self.navigationController?.pushViewController(controller, animated: true)
 ```
 ### Points to note:
-* There is replaceViewController function hero. This is not to be used unless u want to replace a controller with the other. When Using Hero all u have to do is enabling hero, assign shared element ids and call push or present. This is all we have to do.
+* There is replaceViewController function in Hero library. This is not meant to be used unless u want to replace a controller with the other. When Using Hero all u have to do is enabling hero, assign shared element ids and call push or present. This is all we have to do.
 
 ### Resources
 * https://github.com/lkzhao/Hero
