@@ -148,7 +148,7 @@ class UserNotificationUtils  {
 The prefered way to write notification scheduling code is in AppDelegate because it can be accessed from any view controller.
 
 So In App Delegate,
-```
+```swift
 extension MyAppDelegate : UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -182,7 +182,7 @@ extension MyAppDelegate : UNUserNotificationCenterDelegate {
     }
 ```
 To open the view controller via AppDelegate, we need visible visibleViewController
-```
+```swift
 //MARK:- Visible View Controller
 extension MyAppDelegate {
     var visibleViewController: UIViewController? {
