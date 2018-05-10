@@ -49,7 +49,7 @@ self.initOneSignal(withLaunchingOptions: launchOptions)
 ### Testing One Signal
 * See the following link: https://documentation.onesignal.com/docs/testing-mobile-push-notifications
 
-### Bonus : Getting OneSignalIds and saving to parse
+### Getting OneSignalIds and saving to parse
 Often times we want to store one signal id to server in our case parse. That OneSignalId will be used for sending push notification from parse server or device to device for chat message notifications. Kindly note that a user can logout from the app any time he wants, so this user should not be able to get push notification again. To acomplish this we need to clear the onesignal id when ever the user logouts from our app.
 ```swift
 //
@@ -138,6 +138,59 @@ public class OneSignalUtils : NSObject {
     }
 }
 
+```
+### Remove Duplicate One Signal Ids Cloud Function
+```js
+Parse.Cloud.define("checkDuplicateOneSignalId", function(request, response) {
+
+    console.log('Started Checking One Signal Id');
+
+    var observerdUserId = request.params.userId;
+    var observedOneSignalId = request.params.oneSignalId;
+
+    // var testOneSignalId = 'bcf07e40-aff4-4533-adba-8c9be1baae55';
+    // var testUserId = 'HxP0F1e4dX';
+
+    var Table = Parse.Object.extend(Parse.User);
+    var query = new Parse.Query(Table);
+    var userOneSignalId = '';
+    var userObjectId = '';
+
+    query.equalTo('oneSignalId', observedOneSignalId);
+
+    query.find().then(function(users) {
+        console.log('Users found');
+        console.log(users);
+
+
+        users.forEach(function(user) {
+            userOneSignalId = user.get('oneSignalId');
+            userObjectId = user.id;
+
+            console.log('One Signal Id ', userOneSignalId);
+            console.log('User id ', userObjectId);
+
+            if (userOneSignalId === observedOneSignalId && userObjectId !== observerdUserId) {
+                user.set('oneSignalId', '');
+                user.save(null, { useMasterKey: true }).then(function() {
+                    console.log('User OneSignalId destroyed');
+                }).catch(function(error) {
+                    console.log('Error');
+                    console.log(error);
+                })
+            }
+
+        });
+
+        response.success('Checking Completed');
+
+    }).catch(function(error) {
+        console.log('Error');
+        console.log(error);
+    })
+
+
+});
 ```
 
 
