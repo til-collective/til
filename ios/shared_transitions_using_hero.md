@@ -119,6 +119,7 @@ self.navigationController?.pushViewController(controller, animated: true)
 ```
 ### Points to note:
 * There is replaceViewController function in Hero library. This is not meant to be used unless u want to replace a controller with the other. When Using Hero all u have to do is enabling hero, assign shared element ids and call push or present. This is all we have to do.
+* While my testing the navigation controller push or pop does not work good with Hero, instead present and dismiss view controller works great.
 
 ### Resources
 * https://github.com/lkzhao/Hero
