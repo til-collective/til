@@ -39,6 +39,7 @@ The Firebase crashlytics does not work in debug to make it run for debug crashes
 4. Go scroll the page to the **Build Options** and find **Debug Information Format**, change the debug from **DWARF** to **DWARF with dSYM file**
 
 ![alt text](images/crashlytics1.png)
+
 ![alt text](images/crashlytics2.png)
 
 
