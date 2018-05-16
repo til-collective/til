@@ -20,3 +20,4 @@ variety of languages and technologies.
 - [Shared Transitions Using Hero](ios/shared_transitions_using_hero.md)
 - [Implementing User Local Notification in iOS 10](ios/implementing_local_notifications.md)
 - [Integrating Firebase Crashlytics](ios/integrating_firebase_crashlytics.md)
+- [Adding a function in base class using Protocols & Extensions](ios/adding_function_in_every_ui_controller.md)
