@@ -1,14 +1,7 @@
 # TIL
 
-> A community-driven Today I Learned initiative.
-
 A collection of concise write-ups on small things I learn day to day across a
 variety of languages and technologies. 
-
-Did you learn something today? Please [contribute](CONTRIBUTING.md)!
-
-Testing
-
 
 ## Categories
 
