@@ -24,4 +24,4 @@ variety of languages and technologies.
 - [Adding a function in base class using Protocols & Extensions](ios/adding_function_in_every_ui_controller.md)
 
 ## git
--[How to Uncommit a commit in git](git/uncommit_a_commit_in_git.md)
+- [How to Uncommit a commit in git](git/uncommit_a_commit_in_git.md)
