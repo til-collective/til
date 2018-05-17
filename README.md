@@ -25,3 +25,5 @@ variety of languages and technologies.
 
 ## git
 - [How to Uncommit a commit in git](git/uncommit_a_commit_in_git.md)
+- [How to Clone a GitHub Repository with your Github account](git/how_to_clone_git_repo_with_your_github_account.md)
+
