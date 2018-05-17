@@ -8,7 +8,6 @@ variety of languages and technologies.
 * [Architecture](#architecture)
 * [iOS](#ios)
 
-Testing
 
 ---
 
